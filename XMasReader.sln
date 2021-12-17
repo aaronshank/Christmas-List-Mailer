@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMasReader", "XMasReader\XMasReader.csproj", "{938CEBB0-2B84-410A-9D2A-C91B3042F9EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{938CEBB0-2B84-410A-9D2A-C91B3042F9EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{938CEBB0-2B84-410A-9D2A-C91B3042F9EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{938CEBB0-2B84-410A-9D2A-C91B3042F9EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{938CEBB0-2B84-410A-9D2A-C91B3042F9EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0BC6C460-5B5D-4D3A-A000-96538977F212}
+	EndGlobalSection
+	GlobalSection(SourceCodeControl) = preSolution
+		SccNumberOfProjects = 2
+		SccLocalPath0 = .
+		CanCheckoutShared = false
+		SccProjectUniqueName1 = XMasReader\\XMasReader.csproj
+		SccLocalPath1 = .
+		SccProjectFilePathRelativizedFromConnection1 = XMasReader\\
+	EndGlobalSection
+EndGlobal
