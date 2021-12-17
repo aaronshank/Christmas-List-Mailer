@@ -66,12 +66,11 @@ namespace XMasReader.Services
         public static void SendEmail(ExcelData data)
         {
             MailMessage mMessage = new MailMessage();
-            mMessage.To = "shank@ctwo.net"; //data.Email;
-            mMessage.CC = "rymer@ctwo.net";
+            mMessage.To = data.Email;
+            mMessage.CC = "REDACTED";
             mMessage.From = data.From;
             mMessage.BodyHtml = File.ReadAllText("C:\\Users\\Shank\\Downloads\\index.html");
             mMessage.Subject = "test";
-            //File.ReadAllText("C:\Users\Shank\OneDrive - C2\Desktop\snowtest\index.html");
             // do sumtin with this
             //data.firstName
             //data.lastName
@@ -82,9 +81,10 @@ namespace XMasReader.Services
             //data.state
             //data.zipCode
 
+            // Mailer for testing
             //MailMessage testMessage = new MailMessage();
-            //testMessage.To = "shank@ctwo.net";
-            //testMessage.From = "shank@ctwo.net";
+            //testMessage.To = "REDACTED";
+            //testMessage.From = "REDACTED";
             //testMessage.Subject = "test";
             //testMessage.BodyHtml = "test";
 
