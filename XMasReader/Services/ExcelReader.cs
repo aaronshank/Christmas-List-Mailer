@@ -19,7 +19,7 @@ namespace XMasReader.Services
             ExcelData exData = new ExcelData();
 
             // File on desktop location
-            string file = @"C:\Users\Shank\OneDrive - C2\Desktop\XMasList2021Copy.xlsx";
+            string file = @"REDACTED";
 
             WorkbookManager manager = new WorkbookManager();
             Workbook workbook = manager.Workbooks.Add(file); // Not sure if .Add() or .OpenReadOnly()
@@ -69,7 +69,7 @@ namespace XMasReader.Services
             mMessage.To = data.Email;
             mMessage.CC = "REDACTED";
             mMessage.From = data.From;
-            mMessage.BodyHtml = File.ReadAllText("C:\\Users\\Shank\\Downloads\\index.html");
+            mMessage.BodyHtml = File.ReadAllText("REDACTED");
             mMessage.Subject = "test";
             // do sumtin with this
             //data.firstName
