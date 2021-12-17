@@ -46,6 +46,8 @@ namespace XMasReader.Services
                     }
                 }
             }
+            
+            // This is for testing purposes so I'm only receiving 1 email instead of the 500+ on the mailing list.
             int i = 0;
             foreach (ExcelData d in sendList)
             {
