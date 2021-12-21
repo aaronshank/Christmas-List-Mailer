@@ -13,32 +13,32 @@ namespace XMasReader.Services
 {
     public class ExcelReader
     {
-        public ArrayList UploadExcel()
+        public void UploadExcel()
         {
-            ArrayList sendList = new ArrayList();
-            ExcelData exData = new ExcelData();
+            List<ExcelData> sendList = new List<ExcelData>();
 
             // File on desktop location
             string file = @"REDACTED";
 
             WorkbookManager manager = new WorkbookManager();
-            Workbook workbook = manager.Workbooks.Add(file); // Not sure if .Add() or .OpenReadOnly()
+            Workbook workbook = manager.Workbooks.Add(file);
             foreach (Worksheet w in workbook.Worksheets)
             {
                 Worksheet sheet = w;
 
                 foreach (IRange r in sheet.Rows)
                 {
-                    if (r.Row >= 2) // Should skip row with headers
+                    if (r.Row >= 2) // Will skip the row with headers
                     {
+                        ExcelData exData = new ExcelData();
                         exData.FirstName = r[r.Row, 1].DisplayText;
                         exData.LastName = r[r.Row, 2].DisplayText;
-                        //exData.Company = r[r.Row, 3].DisplayText;
-                        //exData.Address1 = r[r.Row, 4].DisplayText;
-                        //exData.Address2 = r[r.Row, 5].DisplayText;
-                        //exData.City = r[r.Row, 6].DisplayText;
-                        //exData.State = r[r.Row, 7].DisplayText;
-                        //exData.ZipCode = r[r.Row, 8].DisplayText;
+                        // exData.Company = r[r.Row, 3].DisplayText;
+                        // exData.Address1 = r[r.Row, 4].DisplayText;
+                        // exData.Address2 = r[r.Row, 5].DisplayText;
+                        // exData.City = r[r.Row, 6].DisplayText;
+                        // exData.State = r[r.Row, 7].DisplayText;
+                        // exData.ZipCode = r[r.Row, 8].DisplayText;
                         exData.Email = r[r.Row, 9].DisplayText;
                         exData.From = r[r.Row, 10].DisplayText;
 
@@ -47,8 +47,9 @@ namespace XMasReader.Services
                 }
             }
             
-            // This is for testing purposes so I'm only receiving 1 email instead of the 500+ on the mailing list.
-            //int i = 0;
+            // ForEach loop to run through the List<T> of recipients.
+            // Null check for error handling.
+            // The nulls didn't affect the program because they were read after reading all the pertinent information, but I dislike having errors thrown.
             foreach (ExcelData d in sendList)
             {
                 if (d.From != "")
@@ -56,7 +57,6 @@ namespace XMasReader.Services
                     SendEmail(d);
                 }
             }
-            return sendList;
         }
 
         public static void SendEmail(ExcelData data)
@@ -68,22 +68,24 @@ namespace XMasReader.Services
             mMessage.BodyHtml = File.ReadAllText("REDACTED");
             mMessage.BodyHtml = mMessage.BodyHtml.Replace("[FirstName]", data.FirstName);
             mMessage.Subject = "Happy Holidays " + data.FirstName.Trim() + " " + data.LastName.Trim() + "!";
-            // do sumtin with this
-            //data.firstName
-            //data.lastName
-            //data.company
-            //data.address1
-            //data.address2
-            //data.city
-            //data.state
-            //data.zipCode
+            
+            // Do sumtin with this
+            // The managerial overlords have decided that nothing is to be done with this
+            // data.firstName
+            // data.lastName
+            // data.company
+            // data.address1
+            // data.address2
+            // data.city
+            // data.state
+            // data.zipCode
 
             // Mailer for testing
-            //MailMessage testMessage = new MailMessage();
-            //testMessage.To = "REDACTED";
-            //testMessage.From = "REDACTED";
-            //testMessage.Subject = "test";
-            //testMessage.BodyHtml = "test";
+            // MailMessage testMessage = new MailMessage();
+            // testMessage.To = "REDACTED";
+            // testMessage.From = "REDACTED";
+            // testMessage.Subject = "test";
+            // testMessage.BodyHtml = "test";
 
             Smtp client = new Smtp();
             string mailHost = ConfigurationManager.AppSettings["mailHost"];
