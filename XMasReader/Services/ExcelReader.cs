@@ -33,12 +33,12 @@ namespace XMasReader.Services
                     {
                         exData.FirstName = r[r.Row, 1].DisplayText;
                         exData.LastName = r[r.Row, 2].DisplayText;
-                        exData.Company = r[r.Row, 3].DisplayText;
-                        exData.Address1 = r[r.Row, 4].DisplayText;
-                        exData.Address2 = r[r.Row, 5].DisplayText;
-                        exData.City = r[r.Row, 6].DisplayText;
-                        exData.State = r[r.Row, 7].DisplayText;
-                        exData.ZipCode = r[r.Row, 8].DisplayText;
+                        //exData.Company = r[r.Row, 3].DisplayText;
+                        //exData.Address1 = r[r.Row, 4].DisplayText;
+                        //exData.Address2 = r[r.Row, 5].DisplayText;
+                        //exData.City = r[r.Row, 6].DisplayText;
+                        //exData.State = r[r.Row, 7].DisplayText;
+                        //exData.ZipCode = r[r.Row, 8].DisplayText;
                         exData.Email = r[r.Row, 9].DisplayText;
                         exData.From = r[r.Row, 10].DisplayText;
 
@@ -48,18 +48,12 @@ namespace XMasReader.Services
             }
             
             // This is for testing purposes so I'm only receiving 1 email instead of the 500+ on the mailing list.
-            int i = 0;
+            //int i = 0;
             foreach (ExcelData d in sendList)
             {
-                if (i > 1)
-                {
-                    break;
-                }
-                else
+                if (d.From != "")
                 {
                     SendEmail(d);
-                    Console.WriteLine(d);
-                    i++;
                 }
             }
             return sendList;
@@ -69,10 +63,11 @@ namespace XMasReader.Services
         {
             MailMessage mMessage = new MailMessage();
             mMessage.To = data.Email;
-            mMessage.CC = "REDACTED";
+            //mMessage.CC = "REDACTED";
             mMessage.From = data.From;
             mMessage.BodyHtml = File.ReadAllText("REDACTED");
-            mMessage.Subject = "test";
+            mMessage.BodyHtml = mMessage.BodyHtml.Replace("[FirstName]", data.FirstName);
+            mMessage.Subject = "Happy Holidays " + data.FirstName.Trim() + " " + data.LastName.Trim() + "!";
             // do sumtin with this
             //data.firstName
             //data.lastName
