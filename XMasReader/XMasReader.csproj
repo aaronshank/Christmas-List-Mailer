@@ -47,22 +47,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ComponentPro.Common, Version=7.2.20.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>\\c2dfs01\C2DFS\C2 File Share\Users\Shank\ComponentPro\ComponentPro.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Excel, Version=7.2.20.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>\\c2dfs01\C2DFS\C2 File Share\Users\Shank\ComponentPro\ComponentPro.Excel.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Mail, Version=7.2.20.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>\\c2dfs01\C2DFS\C2 File Share\Users\Shank\ComponentPro\ComponentPro.Mail.dll</HintPath>
-    </Reference>
-    <Reference Include="ComponentPro.Network, Version=7.2.20.234, Culture=neutral, PublicKeyToken=0efede2d78b28dff, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>\\c2dfs01\C2DFS\C2 File Share\Users\Shank\ComponentPro\ComponentPro.Network.dll</HintPath>
-    </Reference>
+    <!-- ComponentPro References REDACTED -->
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
