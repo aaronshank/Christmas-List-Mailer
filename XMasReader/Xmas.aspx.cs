@@ -14,8 +14,8 @@ namespace XMasReader
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // I started working on having it display on the webpage after hitting the button, but abandonded halfway through.
-        
+            // I started working on having it display on the webpage after hitting the button, but abandonded.
+            // This portion is irrelevant for usage, only was going to be used for testing.
         
             //ExcelReader eReader = new ExcelReader();
             //eReader.UploadExcel();
