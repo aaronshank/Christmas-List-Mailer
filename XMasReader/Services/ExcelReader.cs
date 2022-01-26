@@ -17,7 +17,7 @@ namespace XMasReader.Services
         {
             List<ExcelData> sendList = new List<ExcelData>();
 
-            // File on desktop location
+            // Excel File on desktop location
             string file = @"REDACTED";
 
             WorkbookManager manager = new WorkbookManager();
@@ -65,8 +65,8 @@ namespace XMasReader.Services
             mMessage.To = data.Email;
             //mMessage.CC = "REDACTED";
             mMessage.From = data.From;
-            mMessage.BodyHtml = File.ReadAllText("REDACTED");
-            mMessage.BodyHtml = mMessage.BodyHtml.Replace("[FirstName]", data.FirstName);
+            mMessage.BodyHtml = File.ReadAllText("REDACTED"); // .html file containing our Christmas Card
+            mMessage.BodyHtml = mMessage.BodyHtml.Replace("[FirstName]", data.FirstName); // So each one is customized
             mMessage.Subject = "Happy Holidays " + data.FirstName.Trim() + " " + data.LastName.Trim() + "!";
             
             // Do sumtin with this
